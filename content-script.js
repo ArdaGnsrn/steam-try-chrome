@@ -9,6 +9,7 @@ function run() {
     convertToTryQuery('.game_area_dlc_price')
     convertToTryQuery('.price', true)
     convertToTryQuery('#header_wallet_balance', true)
+    convertToTryQuery('.account_name')
     convertToTryQueryLongText('.game_area_purchase_game_dropdown_menu_item_text')
     if (interval1) clearInterval(interval1)
     setInterval(function () {
