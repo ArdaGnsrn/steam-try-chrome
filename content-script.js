@@ -7,6 +7,8 @@ function run() {
     convertToTryQuery('.discount_final_price')
     convertToTryQuery('.discount_original_price')
     convertToTryQuery('.game_area_dlc_price')
+    convertToTryQuery('.price', true)
+    convertToTryQuery('#header_wallet_balance', true)
     convertToTryQueryLongText('.game_area_purchase_game_dropdown_menu_item_text')
     if (interval1) clearInterval(interval1)
     setInterval(function () {
@@ -40,10 +42,13 @@ function convertToTryQueryLongText(query) {
     }
 }
 
-function convertToTryQuery(query) {
+function convertToTryQuery(query, withOriginal = false) {
     try {
         document.querySelectorAll(query).forEach(function ($el) {
-            const newText = convertToTry($el.innerText)
+            let newText = convertToTry($el.innerText)
+            if (withOriginal) {
+                newText += ' (' + $el.innerText + ')'
+            }
             if (newText) $el.innerText = newText
         })
     } catch (e) {
