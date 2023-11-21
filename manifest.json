@@ -5,7 +5,7 @@
   "icons": {
     "128": "icon-128x128.png"
   },
-  "description": "Steam mağazasında oyun fiyatlarını ve pazardaki eşya fiyatlarını kullanıcı dostu bir şekilde Türkçe olarak görüntülemenizi sağlar.",
+  "description": "Steam mağazasında oyun fiyatlarını ve pazardaki eşya fiyatlarını kullanıcı dostu bir şekilde Türkçe olarak görüntülemenizi sağlar. https://github.com/ArdaGnsrn/steam-try-chrome",
   "background": {
     "service_worker": "sw.js"
   },
