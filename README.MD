@@ -29,7 +29,7 @@ Chrome Web Mağazası sayfası henüz hazır değil. Eklenti onaya gönderildi. 
 
 - Eklenti dosyalarını indirin.
 - Google Chrome tarayıcınızın sağ üst köşesindeki üç noktaya tıklayın.
-- "Diğer araçlar" > "Uzantılar" seçeneğine tıklayın.
+- "Uzantılar" seçeneğine tıklayın.
 - "Geliştirici modu"nu aktif edin.
 - "Paketlenmemiş öğe yükle" butonuna tıklayın.
 - İndirdiğiniz zip'i klasöre çıkartın ve klasörü seçin.
