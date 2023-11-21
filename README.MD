@@ -29,3 +29,6 @@ Chrome Web Mağazası sayfası henüz hazır değil. Eklenti onaya gönderildi. 
 - "Paketlenmemiş öğe yükle" butonuna tıklayın.
 - İndirdiğiniz zip dosyasını seçin.
 - Eklenti kuruldu.
+
+## Lisans
+MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için [LICENSE](/LICENSE) dosyasına bakabilirsiniz.
