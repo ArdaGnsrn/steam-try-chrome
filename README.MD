@@ -2,10 +2,10 @@
 
 Steam TRY Chrome Eklentisi
 ----------------
-![](https://img.shields.io/github/stars/ArdaGnsrn/steam-try-chome.svg?style=flat-square)
-![](https://img.shields.io/github/forks/ArdaGnsrn/steam-try-chome.svg?style=flat-square)
-![](https://img.shields.io/github/issues/ArdaGnsrn/steam-try-chome.svg?style=flat-square)
-![](https://img.shields.io/github/license/ArdaGnsrn/steam-try-chome.svg?style=flat-square)
+![](https://img.shields.io/github/stars/ArdaGnsrn/steam-try-chrome.svg?style=flat-square)
+![](https://img.shields.io/github/forks/ArdaGnsrn/steam-try-chrome.svg?style=flat-square)
+![](https://img.shields.io/github/issues/ArdaGnsrn/steam-try-chrome.svg?style=flat-square)
+![](https://img.shields.io/github/license/ArdaGnsrn/steam-try-chrome.svg?style=flat-square)
 
 Steam'de mağaza ve pazar sayfalarında para birimini TL(Türk Lirası) olarak görüntülemek için geliştirilmiştir. Steam 20.11.2023 tarihinden itibaren TL para birimini desteklemeyeceğini açıkladı. Bu eklentiyi Google Chrome eklentisi olarak kullanarak Steam'de TL para birimini kullanmaya devam edebilirsiniz.
 
