@@ -9,7 +9,7 @@ Steam TRY Chrome Eklentisi
 
 Steam'de mağaza ve pazar sayfalarında para birimini TL(Türk Lirası) olarak görüntülemek için geliştirilmiştir. Steam 20.11.2023 tarihinden itibaren TL para birimini desteklemeyeceğini açıkladı. Bu eklentiyi Google Chrome eklentisi olarak kullanarak Steam'de TL para birimini kullanmaya devam edebilirsiniz.
 
-Eğer eklenti işinize yaradıysa Github üzerinden yıldız vermeyi unutmayın :)
+**Eğer eklenti işinize yaradıysa Github üzerinden ⭐ vermeyi unutmayın :)**
 
 ## Google Chrome Web Mağazası
 
