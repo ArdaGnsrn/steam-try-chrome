@@ -92,4 +92,3 @@ async function fetchCurrency() {
 }
 
 fetchCurrency();
-setInterval(fetchCurrency, (1000 * 60 * 10)) // 10 minutes
