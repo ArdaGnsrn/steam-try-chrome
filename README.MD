@@ -35,6 +35,10 @@ Chrome Web Mağazası sayfası henüz hazır değil. Eklenti onaya gönderildi. 
 - İndirdiğiniz zip'i klasöre çıkartın ve klasörü seçin.
 - Eklenti kuruldu.
 
+## Kurulum Videosu
+
+[Steam Nasıl TL Kullanılır? Steam'de Fiyatları TL Olarak Görüntüleyin!](https://www.youtube.com/watch?v=Jj3FNyZJ1II)
+
 ## Lisans
 
 MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için [LICENSE](/LICENSE) dosyasına bakabilirsiniz.
