@@ -75,7 +75,7 @@ async function fetchCurrency() {
          
          Powered By %cArda GUNSUREN%c
           %c- Personal Page: https://ardagunsuren.com       
-          - Github: https://github.com/ArdaGnsrn                           
+          - Github: https://github.com/ArdaGnsrn/steam-try-chrome                           
         `,
         "text-decoration: underline; ",
         "text-decoration: none;",
