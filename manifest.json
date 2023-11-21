@@ -1,0 +1,22 @@
+{
+  "name": "Steam TRY",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "icon-128x128.png"
+  },
+  "description": "Steam mağazasında oyun fiyatlarını ve pazardaki eşya fiyatlarını kullanıcı dostu bir şekilde Türkçe olarak görüntülemenizi sağlar.",
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "author": "ardagunsuren@gmail.com",
+  "permissions": [
+    "scripting",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://steampowered.com/*",
+    "https://store.steampowered.com/*",
+    "https://steamcommunity.com/*"
+  ]
+}
