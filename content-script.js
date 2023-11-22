@@ -1,77 +1,68 @@
-let TRY = 0;
+TRY = 0;
 
-let interval1, interval2;
+const SELECTORS = [
+    '.discount_final_price',
+    '.discount_original_price',
+    '.game_area_dlc_price',
+    '.price',
+    '#header_wallet_balance',
+    '.account_name',
+    '.game_area_purchase_game_dropdown_menu_item_text',
+    '#search_suggestion_contents .match_subtitle',
+    '.sale_price',
+    '.normal_price',
+    '.market_commodity_orders_header_promote',
+    '#orders_histogram .jqplot-xaxis-tick',
+    '#pricehistory .jqplot-yaxis-tick'
+].map(s => s + ':not(.steam-try)').join(', ');
 
-function run() {
-    // Steam Store
-    setInterval(function () {
-        convertToTryQuery('.discount_final_price')
-        convertToTryQuery('.discount_original_price')
-    }, 1000)
-    convertToTryQuery('.game_area_dlc_price')
-    convertToTryQuery('.price', true)
-    convertToTryQuery('#header_wallet_balance', true)
-    convertToTryQuery('.account_name')
-    convertToTryQueryLongText('.game_area_purchase_game_dropdown_menu_item_text')
-    if (interval1) clearInterval(interval1)
-    setInterval(function () {
-        convertToTryQuery('#search_suggestion_contents .match_subtitle')
-    }, 1000)
-
-    // Steam Community Market
-    convertToTryQuery('.sale_price')
-    convertToTryQuery('.normal_price')
-    if (interval2) clearInterval(interval2)
-    setInterval(function () {
-        convertToTryQuery('.market_commodity_orders_header_promote')
-    }, 100)
-    convertToTryQuery('#orders_histogram .jqplot-xaxis-tick')
-    convertToTryQuery('#pricehistory .jqplot-yaxis-tick')
-}
+const REGEX = /\$([0-9,]+\.\d{2})\s*(USD)?/;
+const REP_REGEX = /\$\d+\.\d{2}( USD)?/;
 
 
-const drRegexSelector = /\$\d+\.\d{2} USD/;
+async function start() {
+    const extStatus = (await chrome.storage.sync.get('status')).status ?? true
+    const showUsd = (await chrome.storage.sync.get('show_usd')).show_usd ?? false;
 
-function convertToTryQueryLongText(query) {
-    try {
-        document.querySelectorAll('.game_area_purchase_game_dropdown_menu_item_text').forEach($el => {
-            const elText = $el.innerText
-            const newText = convertToTry(elText.match(drRegexSelector)[0])
+    if (!extStatus) return;
 
-            if (newText) $el.innerText = elText.replace(drRegexSelector, newText)
-        })
-    } catch (e) {
-        //
-    }
-}
-
-function convertToTryQuery(query, withOriginal = false) {
-    try {
-        document.querySelectorAll(query).forEach(function ($el) {
-            let newText = convertToTry($el.innerText)
-            if (withOriginal) {
-                newText += ' (' + $el.innerText + ')'
+    if (showUsd) {
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .steam-try {
+                font-size: 0.8em!important;
             }
-            if (newText) $el.innerText = newText
-        })
-    } catch (e) {
-        //
+        `;
+        document.head.appendChild(style);
     }
+
+    const observer = new MutationObserver(() => {
+        const elements = document.querySelectorAll(SELECTORS);
+
+        elements.forEach((element) => {
+            const text = element.innerText;
+            const matches = text.match(REGEX);
+
+            if (!matches) return;
+
+            const usdPrice = parseFloat(matches[1]);
+            const tryPrice = usdPrice * TRY;
+
+            element.classList.add("steam-try");
+
+            let newText = '';
+            if (showUsd) {
+                newText += `${usdPrice.toFixed(2)}$`;
+            }
+            newText += ` (${tryPrice.toFixed(2)} TL)`;
+
+            element.innerText = (text.replace(REP_REGEX, newText));
+        });
+    });
+
+    observer.observe(document, {childList: true, subtree: true});
 }
 
-function convertToTry(text) {
-    const parsedPrice = parseText(text)
-    if (!parsedPrice) return;
-
-    return (parsedPrice * TRY).toFixed(2) + ' TL'
-}
-
-function parseText(text) {
-    const currency = text[0]
-    if (currency !== '$') return false;
-
-    return (text.slice(1).split(' ')[0]) * 1
-}
 
 async function fetchCurrency() {
     console.log(`
@@ -94,9 +85,8 @@ async function fetchCurrency() {
     TRY = (await res.json()).price;
     console.log("[Steam TRY] Currency fetched: " + TRY);
     console.log("[Steam TRY] Running..");
-    // add link to ardagunsuren.com with text Arda GUNSUREN
 
-    run();
+    await start();
 }
 
 fetchCurrency();

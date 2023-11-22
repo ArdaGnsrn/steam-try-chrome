@@ -1,0 +1,47 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Steam TRY</title>
+    <link rel="stylesheet" href="/popup/bootstrap.min.css"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <style>
+        html {
+            min-width: 500px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <img src="/popup/steam_logo.png" alt="Steam TRY" width="20" height="20" style="object-fit: cover"
+                 class="mb-1">
+            Steam TRY
+        </a>
+        <p>Steam mağaza ve topluluk sayfalarında TL fiyatları görün!</p>
+
+    </div>
+</nav>
+
+<div class="form-control">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="statusCheck" style="margin-top: 6px" name="status">
+        <label class="form-check-label" for="statusCheck">Eklentiyi aktif et.</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="showUsdCheck" style="margin-top: 6px" name="show_usd">
+        <label class="form-check-label" for="showUsdCheck">USD fiyatlarını görmeye devam et.</label>
+    </div>
+</div>
+
+<div class="container mt-2 pb-3">
+        Bu eklenti açık kaynak kodlu olarak GitHub üzerinde <a href="https://github.com/ArdaGnsrn/steam-try-chrome">ArdaGnsrn/steam-try-chrome</a>
+        adresinde paylaşılmıştır.
+</div>
+
+
+</body>
+<script src="/popup/popup.js"></script>
+</html>
