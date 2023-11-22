@@ -53,8 +53,10 @@ async function start() {
             let newText = '';
             if (showUsd) {
                 newText += `${usdPrice.toFixed(2)}$`;
+                newText += ` (${tryPrice.toFixed(2)} TL)`;
+            } else {
+                newText += `${tryPrice.toFixed(2)} TL`;
             }
-            newText += ` (${tryPrice.toFixed(2)} TL)`;
 
             element.innerText = (text.replace(REP_REGEX, newText));
         });
