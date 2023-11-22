@@ -4,8 +4,10 @@ let interval1, interval2;
 
 function run() {
     // Steam Store
-    convertToTryQuery('.discount_final_price')
-    convertToTryQuery('.discount_original_price')
+    setInterval(function () {
+        convertToTryQuery('.discount_final_price')
+        convertToTryQuery('.discount_original_price')
+    }, 1000)
     convertToTryQuery('.game_area_dlc_price')
     convertToTryQuery('.price', true)
     convertToTryQuery('#header_wallet_balance', true)
