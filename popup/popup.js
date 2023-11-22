@@ -1,4 +1,4 @@
-chrome.storage.sync.get(['status', 'wallet_show_usd', 'show_usd'], function (result) {
+chrome.storage.sync.get(['status', 'show_usd'], function (result) {
     document.querySelector('#statusCheck').checked = (result.status ?? true);
     document.querySelector('#showUsdCheck').checked = (result.show_usd ?? true);
 });
