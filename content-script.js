@@ -22,7 +22,7 @@ const REP_REGEX = /\$\d+\.\d{2}( USD)?/;
 
 async function start() {
     const extStatus = (await chrome.storage.sync.get('status')).status ?? true
-    const showUsd = (await chrome.storage.sync.get('show_usd')).show_usd ?? false;
+    const showUsd = (await chrome.storage.sync.get('show_usd')).show_usd ?? true;
 
     if (!extStatus) return;
 
