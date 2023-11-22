@@ -23,6 +23,7 @@ const REP_REGEX = /\$\d+\.\d{2}( USD)?/;
 async function start() {
     const extStatus = (await chrome.storage.sync.get('status')).status ?? true
     const showUsd = (await chrome.storage.sync.get('show_usd')).show_usd ?? true;
+    const showOriginalUsd = (await chrome.storage.sync.get('show_original_usd')).show_original_usd ?? true;
 
     if (!extStatus) return;
 
@@ -44,6 +45,10 @@ async function start() {
             const matches = text.match(REGEX);
 
             if (!matches) return;
+
+            if (showOriginalUsd && element.classList.contains('discount_original_price')) {
+                return;
+            }
 
             const usdPrice = parseFloat(matches[1]);
             const tryPrice = usdPrice * TRY;
