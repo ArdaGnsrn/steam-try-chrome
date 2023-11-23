@@ -1,4 +1,4 @@
-TRY = 0;
+let TRY = 0;
 
 const SELECTORS = [
     '.discount_final_price',
@@ -13,7 +13,9 @@ const SELECTORS = [
     '.normal_price',
     '.market_commodity_orders_header_promote',
     '#orders_histogram .jqplot-xaxis-tick',
-    '#pricehistory .jqplot-yaxis-tick'
+    '#pricehistory .jqplot-yaxis-tick',
+    '.salepreviewwidgets_StoreSalePriceBox_Wh0L8',
+    '.salepreviewwidgets_StoreOriginalPrice_1EKGZ'
 ].map(s => s + ':not(.steam-try)').join(', ');
 
 const REGEX = /\$([0-9,]+\.\d{2})\s*(USD)?/;
@@ -46,7 +48,7 @@ async function start() {
 
             if (!matches) return;
 
-            if (showOriginalUsd && element.classList.contains('discount_original_price')) {
+            if (showOriginalUsd && (element.classList.contains('discount_original_price') || element.classList.contains('salepreviewwidgets_StoreOriginalPrice_1EKGZ'))) {
                 return;
             }
 
