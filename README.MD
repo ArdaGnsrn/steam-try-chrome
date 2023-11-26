@@ -27,13 +27,8 @@ Chrome Web Mağazası sayfası henüz hazır değil. Eklenti onaya gönderildi. 
 
 ## Kurulum
 
-- Eklenti dosyalarını indirin.
-- Google Chrome tarayıcınızın sağ üst köşesindeki üç noktaya tıklayın.
-- "Uzantılar" seçeneğine tıklayın.
-- "Geliştirici modu"nu aktif edin.
-- "Paketlenmemiş öğe yükle" butonuna tıklayın.
-- İndirdiğiniz zip'i klasöre çıkartın ve klasörü seçin.
-- Eklenti kuruldu.
+- [Chrome Web Mağazası](https://chromewebstore.google.com/u/2/detail/steam-try/gbheeajjjabflipjbaofaogejecilili) sayfasını ziyaret edin ve eklentiyi kurun.
+- Eklentiyi kurmak bu kadar basit.. Artık Steam'e girdiğinizde fiyatları TL olarak görüntüleyebilirsiniz.
 
 ## Kurulum Videosu
 
