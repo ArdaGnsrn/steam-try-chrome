@@ -15,7 +15,9 @@ const SELECTORS = [
     '#orders_histogram .jqplot-xaxis-tick',
     '#pricehistory .jqplot-yaxis-tick',
     '.salepreviewwidgets_StoreSalePriceBox_Wh0L8',
-    '.salepreviewwidgets_StoreOriginalPrice_1EKGZ'
+    '.salepreviewwidgets_StoreOriginalPrice_1EKGZ',
+    '.game_purchase_price .price',
+    '.game_purchase_price .price .es_regional_onmouse .es_regional_icon'
 ].map(s => s + ':not(.steam-try)').join(', ');
 
 const REGEX = /\$([0-9,]+\.\d{2})\s*(USD)?/;
